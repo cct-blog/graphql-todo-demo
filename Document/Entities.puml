@@ -1,0 +1,20 @@
+@startuml
+
+Entity ToDo {
+  string Id
+  --
+  string Message
+  bool IsFinished
+}
+
+Entity ToDoReference {
+  string Id
+  --
+  string ParentId
+  string ChildId
+}
+
+ToDoReference "ParentId" -- "Id" ToDo : 親
+ToDoReference "ChildId" -- "Id" ToDo : 子
+
+@enduml
